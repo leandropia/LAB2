@@ -1,5 +1,5 @@
 ﻿using System;
-
+using ConsoleTables;
 internal class Program
 {
     private static void Main(string[] args)
@@ -45,6 +45,34 @@ internal class Program
             Console.WriteLine("{0} x {1} = {2}", num3, i, product);
         }
 
+
+        Console.WriteLine();
+        Console.WriteLine("*** Hit ENTER to move to next step ***");
+
+        Console.ReadKey();
+
+        Console.WriteLine("===#3 Output the number of bytes in memory that each of the following " +
+                         "number types uses and the minimum and maximum values they can have: " +
+                         "sbyte, byte, short, ushort, int, uint, long, ulong, float, double, and decimal. ");
+        Console.WriteLine();
+
+        ConsoleTable table = new ConsoleTable("Type", "Size", "Min", "Max");
+        table.AddRow("sbyte", sizeof(sbyte), sbyte.MinValue, sbyte.MaxValue);
+        table.AddRow("byte", sizeof(byte), byte.MinValue, byte.MaxValue);
+        table.AddRow("short", sizeof(short), short.MinValue, short.MaxValue);
+        table.AddRow("ushort", sizeof(ushort), ushort.MinValue, ushort.MaxValue);
+        table.AddRow("int", sizeof(int), int.MinValue, int.MaxValue);
+        table.AddRow("uint", sizeof(uint), uint.MinValue, uint.MaxValue);
+        table.AddRow("long", sizeof(long), long.MinValue, long.MaxValue);
+        table.AddRow("ulong", sizeof(ulong), ulong.MinValue, ulong.MaxValue);
+        table.AddRow("float", sizeof(float), float.MinValue, float.MaxValue);
+        table.AddRow("double", sizeof(double), double.MinValue, double.MaxValue);
+        table.AddRow("decimal", sizeof(decimal), decimal.MinValue, decimal.MaxValue);
+       
+
+        Console.WriteLine(table);
+
+        
 
 
     }
