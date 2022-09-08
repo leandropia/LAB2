@@ -72,8 +72,63 @@ internal class Program
 
         Console.WriteLine(table);
 
+        Console.WriteLine();
+         Console.WriteLine("*** Hit ENTER to move to next step ***");
         
+        Console.ReadKey();
 
+        Console.WriteLine("===#4 Create a 5 function (+, -, *, /, and modulus) calculator. This calculator should loop " +
+                            "until ‘esc’ is typed. For example, I should be asked for num 1, then some operation (+, -, *, /, and modulus) " +
+                            "to another num 2. Provide the results, and then provide a way to esc the program or do " +
+                            "another operation (+, -, *, /, and modulus) to the result.\n");
+
+        while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Escape))
+        { 
+            Console.WriteLine("Select one of the 5 functions:");
+            Console.WriteLine("Type '1' for Addition");
+            Console.WriteLine("Type '2' for Subtraction");
+            Console.WriteLine("Type '3' for Multiplication");
+            Console.WriteLine("Type '4' for Division");
+            Console.WriteLine("Type '5' for Modulus");
+            Console.WriteLine();
+            int action = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter 1st number");
+            int input_1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter 2nd number");
+            int input_2 = Convert.ToInt32(Console.ReadLine());
+            int result = 0;
+
+            if (action == 1)
+            {
+                result = input_1 + input_2;
+                Console.WriteLine("The Result is: " + result);
+                Console.WriteLine();
+            }
+            else if (action == 2)
+            {
+                result = input_1 - input_2;
+                Console.WriteLine("The Result is: " + result);
+                Console.WriteLine();
+            }
+            else if (action == 3)
+            {
+                result = input_1 * input_2;
+                Console.WriteLine("The Result is: " + result);
+                Console.WriteLine();
+            }
+            else if (action == 4)
+            {
+                result = input_1 / input_2;
+                Console.WriteLine("The Result is: " + result);
+                Console.WriteLine();
+            }
+            else if (action == 5)
+            {
+                result = input_1 % input_2;
+                Console.WriteLine("The Result is: " + result);
+                Console.WriteLine();
+            }
+        }
 
     }
 }
